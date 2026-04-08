@@ -1,74 +1,59 @@
-<!-- JOB-WINNING PORTFOLIO + CV (HTML + Bootstrap + JS) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shazan | Portfolio & CV</title>
+  <title>Shazan | Portfolio</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
-
-  <style>
-    body { background: black; color: white; font-family: 'Poppins'; }
-    .hero { height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
-    .hero h1 { font-family: 'Playfair Display'; font-size:4rem; }
-    .section { padding: 60px 20px; }
-    .card { background:#111; border:none; border-radius:15px; }
-    .card:hover { transform:scale(1.05); transition:0.3s; }
-    .btn-custom { background:white; color:black; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-black fixed-top">
+  <div class="container">
+    <span class="navbar-brand">SHAZAN</span>
+    <a href="#contact" class="btn btn-outline-light btn-sm">Hire Me</a>
+  </div>
+</nav>
+
 <!-- HERO -->
 <section class="hero">
-  <h1>SHAZAN</h1>
-  <p>Script Writer | CSE Student</p>
-  <p class="text-muted">Blending technology with storytelling</p>
-  <a href="#contact" class="btn btn-custom mt-3">Hire Me</a>
+  <h1>Script Writer</h1>
+  <p>Blending technology with storytelling</p>
 </section>
 
 <!-- ABOUT -->
-<section class="section text-center">
-  <h2>About Me</h2>
-  <p>I am a CSE student with experience working in a small company, now aiming to grow in larger creative and tech-driven environments.</p>
+<section class="section container text-center">
+  <h2>About</h2>
+  <p>CSE student with experience in script writing and creative storytelling, aiming to work on impactful projects.</p>
 </section>
 
 <!-- SKILLS -->
-<section class="section">
+<section class="section bg-dark text-center">
   <div class="container">
-    <h2 class="text-center mb-4">Skills</h2>
-    <div class="row text-center">
+    <h2>Skills</h2>
+    <div class="row mt-4">
       <div class="col-md-3">Script Writing</div>
       <div class="col-md-3">Storytelling</div>
-      <div class="col-md-3">HTML/CSS/JS</div>
+      <div class="col-md-3">Web Development</div>
       <div class="col-md-3">Problem Solving</div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="section bg-dark">
-  <div class="container">
-    <h2 class="text-center mb-4">Experience</h2>
-    <p><strong>Small Company</strong> — Worked on script writing and creative tasks.</p>
-  </div>
+<!-- PORTFOLIO -->
+<section class="section container">
+  <h2 class="text-center">My Scripts</h2>
+  <div class="row" id="scripts"></div>
 </section>
 
-<!-- PROJECTS / SCRIPTS -->
-<section class="section">
-  <div class="container">
-    <h2 class="text-center mb-4">My Scripts</h2>
-    <div class="row" id="scripts"></div>
-  </div>
-</section>
-
-<!-- CV DOWNLOAD -->
+<!-- CV -->
 <section class="section text-center bg-dark">
-  <h2>Download CV</h2>
-  <a href="cv.pdf" class="btn btn-custom">Download Resume</a>
+  <h2>Resume</h2>
+  <a href="cv.pdf" class="btn btn-light">Download CV</a>
 </section>
 
 <!-- CONTACT -->
@@ -77,29 +62,10 @@
   <p>Email: yourmail@example.com</p>
 </section>
 
-<!-- FOOTER -->
-<footer class="text-center p-4">
-  <p>© 2026 Shazan</p>
+<footer class="text-center p-3">
+  <small>© 2026 Shazan</small>
 </footer>
 
-<script>
-const scripts = [
-  { title: "Echoes of Silence", desc: "A haunting story" },
-  { title: "Midnight Run", desc: "A thriller chase" }
-];
-
-const container = document.getElementById('scripts');
-scripts.forEach(s => {
-  container.innerHTML += `
-    <div class="col-md-6 mb-4">
-      <div class="card p-4">
-        <h4>${s.title}</h4>
-        <p>${s.desc}</p>
-      </div>
-    </div>
-  `;
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
