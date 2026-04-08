@@ -1,20 +1,36 @@
-<!-- Cinematic Portfolio (HTML + CSS + Bootstrap + JS) -->
-
+<!-- PREMIUM CINEMATIC PORTFOLIO (HTML + Bootstrap + JS) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shazan Portfolio</title>
+  <title>Shazan | Cinematic Portfolio</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
+
   <style>
     body {
+      margin: 0;
       background: black;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Cinematic background video */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.3;
     }
 
     .hero {
@@ -26,16 +42,23 @@
       text-align: center;
     }
 
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      letter-spacing: 2px;
+    }
+
     .card {
-      background: #111;
+      background: rgba(20,20,20,0.9);
       border: none;
-      color: white;
-      transition: 0.3s;
+      border-radius: 15px;
+      transition: 0.4s;
       cursor: pointer;
     }
 
     .card:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
 
     .filter-btn {
@@ -46,41 +69,56 @@
       background: #111;
       color: white;
     }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);} 
+      to {opacity: 1; transform: translateY(0);} 
+    }
   </style>
 </head>
 
 <body>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1 class="display-3">SHAZAN</h1>
-  <p class="text-muted">Script Writer • Storyteller • CSE Mind</p>
+<!-- Background Video -->
+<video autoplay muted loop class="bg-video">
+  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+</video>
+
+<!-- Hero -->
+<section class="hero fade-in">
+  <h1>SHAZAN</h1>
+  <p class="text-light">Blending technology with storytelling</p>
 </section>
 
-<!-- Filter Buttons -->
-<div class="text-center mb-4">
+<!-- Filters -->
+<div class="text-center mb-4 fade-in">
   <button class="btn btn-outline-light filter-btn" onclick="filterScripts('All')">All</button>
   <button class="btn btn-outline-light filter-btn" onclick="filterScripts('Drama')">Drama</button>
   <button class="btn btn-outline-light filter-btn" onclick="filterScripts('Thriller')">Thriller</button>
 </div>
 
-<!-- Scripts Section -->
-<div class="container">
+<!-- Scripts -->
+<div class="container fade-in">
   <div class="row" id="scriptContainer"></div>
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="scriptModal" tabindex="-1">
+<div class="modal fade" id="scriptModal">
   <div class="modal-dialog modal-lg">
     <div class="modal-content p-4">
       <h3 id="modalTitle"></h3>
       <p id="modalContent" class="mt-3"></p>
-      <button class="btn btn-light mt-3" data-bs-dismiss="modal">Close</button>
+      <button class="btn btn-light mt-3" onclick="downloadScript()">Download PDF</button>
+      <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
     </div>
   </div>
 </div>
 
-<!-- JS -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
@@ -99,6 +137,8 @@ const scripts = [
   }
 ];
 
+let currentScript = null;
+
 function displayScripts(data) {
   const container = document.getElementById("scriptContainer");
   container.innerHTML = "";
@@ -106,7 +146,7 @@ function displayScripts(data) {
   data.forEach(script => {
     container.innerHTML += `
       <div class="col-md-6 mb-4">
-        <div class="card p-4" onclick="openModal('${script.title}', '${script.content}')">
+        <div class="card p-4" onclick="openModal('${script.title}', \`${script.content}\`)">
           <h4>${script.title}</h4>
           <p class="text-muted">${script.description}</p>
           <small>${script.category}</small>
@@ -120,20 +160,26 @@ function filterScripts(category) {
   if (category === "All") {
     displayScripts(scripts);
   } else {
-    const filtered = scripts.filter(s => s.category === category);
-    displayScripts(filtered);
+    displayScripts(scripts.filter(s => s.category === category));
   }
 }
 
 function openModal(title, content) {
+  currentScript = {title, content};
   document.getElementById("modalTitle").innerText = title;
   document.getElementById("modalContent").innerText = content;
 
-  const modal = new bootstrap.Modal(document.getElementById('scriptModal'));
-  modal.show();
+  new bootstrap.Modal(document.getElementById('scriptModal')).show();
 }
 
-// Initial load
+function downloadScript() {
+  const blob = new Blob([currentScript.title + "\n\n" + currentScript.content], { type: 'text/plain' });
+  const link = document.createElement('a');
+  link.href = URL.createObjectURL(blob);
+  link.download = currentScript.title + ".txt";
+  link.click();
+}
+
 filterScripts('All');
 </script>
 
