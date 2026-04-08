@@ -1,0 +1,33 @@
+body {
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.card-custom {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card-custom:hover {
+  transform: translateY(-10px);
+}
