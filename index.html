@@ -1,186 +1,104 @@
-<!-- PREMIUM CINEMATIC PORTFOLIO (HTML + Bootstrap + JS) -->
+<!-- JOB-WINNING PORTFOLIO + CV (HTML + Bootstrap + JS) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shazan | Cinematic Portfolio</title>
+  <title>Shazan | Portfolio & CV</title>
 
-  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      margin: 0;
-      background: black;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* Cinematic background video */
-    .bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 0.3;
-    }
-
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4rem;
-      letter-spacing: 2px;
-    }
-
-    .card {
-      background: rgba(20,20,20,0.9);
-      border: none;
-      border-radius: 15px;
-      transition: 0.4s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    }
-
-    .filter-btn {
-      margin: 5px;
-    }
-
-    .modal-content {
-      background: #111;
-      color: white;
-    }
-
-    .fade-in {
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);} 
-      to {opacity: 1; transform: translateY(0);} 
-    }
+    body { background: black; color: white; font-family: 'Poppins'; }
+    .hero { height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+    .hero h1 { font-family: 'Playfair Display'; font-size:4rem; }
+    .section { padding: 60px 20px; }
+    .card { background:#111; border:none; border-radius:15px; }
+    .card:hover { transform:scale(1.05); transition:0.3s; }
+    .btn-custom { background:white; color:black; }
   </style>
 </head>
 
 <body>
 
-<!-- Background Video -->
-<video autoplay muted loop class="bg-video">
-  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-</video>
-
-<!-- Hero -->
-<section class="hero fade-in">
+<!-- HERO -->
+<section class="hero">
   <h1>SHAZAN</h1>
-  <p class="text-light">Blending technology with storytelling</p>
+  <p>Script Writer | CSE Student</p>
+  <p class="text-muted">Blending technology with storytelling</p>
+  <a href="#contact" class="btn btn-custom mt-3">Hire Me</a>
 </section>
 
-<!-- Filters -->
-<div class="text-center mb-4 fade-in">
-  <button class="btn btn-outline-light filter-btn" onclick="filterScripts('All')">All</button>
-  <button class="btn btn-outline-light filter-btn" onclick="filterScripts('Drama')">Drama</button>
-  <button class="btn btn-outline-light filter-btn" onclick="filterScripts('Thriller')">Thriller</button>
-</div>
+<!-- ABOUT -->
+<section class="section text-center">
+  <h2>About Me</h2>
+  <p>I am a CSE student with experience working in a small company, now aiming to grow in larger creative and tech-driven environments.</p>
+</section>
 
-<!-- Scripts -->
-<div class="container fade-in">
-  <div class="row" id="scriptContainer"></div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="scriptModal">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content p-4">
-      <h3 id="modalTitle"></h3>
-      <p id="modalContent" class="mt-3"></p>
-      <button class="btn btn-light mt-3" onclick="downloadScript()">Download PDF</button>
-      <button class="btn btn-secondary mt-3" data-bs-dismiss="modal">Close</button>
+<!-- SKILLS -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Skills</h2>
+    <div class="row text-center">
+      <div class="col-md-3">Script Writing</div>
+      <div class="col-md-3">Storytelling</div>
+      <div class="col-md-3">HTML/CSS/JS</div>
+      <div class="col-md-3">Problem Solving</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- EXPERIENCE -->
+<section class="section bg-dark">
+  <div class="container">
+    <h2 class="text-center mb-4">Experience</h2>
+    <p><strong>Small Company</strong> — Worked on script writing and creative tasks.</p>
+  </div>
+</section>
+
+<!-- PROJECTS / SCRIPTS -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">My Scripts</h2>
+    <div class="row" id="scripts"></div>
+  </div>
+</section>
+
+<!-- CV DOWNLOAD -->
+<section class="section text-center bg-dark">
+  <h2>Download CV</h2>
+  <a href="cv.pdf" class="btn btn-custom">Download Resume</a>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section text-center">
+  <h2>Contact</h2>
+  <p>Email: yourmail@example.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center p-4">
+  <p>© 2026 Shazan</p>
+</footer>
 
 <script>
 const scripts = [
-  {
-    title: "Echoes of Silence",
-    category: "Drama",
-    description: "A haunting story of memory and loss.",
-    content: "Full script content here..."
-  },
-  {
-    title: "Midnight Run",
-    category: "Thriller",
-    description: "A high-speed chase against time.",
-    content: "Thriller script content..."
-  }
+  { title: "Echoes of Silence", desc: "A haunting story" },
+  { title: "Midnight Run", desc: "A thriller chase" }
 ];
 
-let currentScript = null;
-
-function displayScripts(data) {
-  const container = document.getElementById("scriptContainer");
-  container.innerHTML = "";
-
-  data.forEach(script => {
-    container.innerHTML += `
-      <div class="col-md-6 mb-4">
-        <div class="card p-4" onclick="openModal('${script.title}', \`${script.content}\`)">
-          <h4>${script.title}</h4>
-          <p class="text-muted">${script.description}</p>
-          <small>${script.category}</small>
-        </div>
+const container = document.getElementById('scripts');
+scripts.forEach(s => {
+  container.innerHTML += `
+    <div class="col-md-6 mb-4">
+      <div class="card p-4">
+        <h4>${s.title}</h4>
+        <p>${s.desc}</p>
       </div>
-    `;
-  });
-}
-
-function filterScripts(category) {
-  if (category === "All") {
-    displayScripts(scripts);
-  } else {
-    displayScripts(scripts.filter(s => s.category === category));
-  }
-}
-
-function openModal(title, content) {
-  currentScript = {title, content};
-  document.getElementById("modalTitle").innerText = title;
-  document.getElementById("modalContent").innerText = content;
-
-  new bootstrap.Modal(document.getElementById('scriptModal')).show();
-}
-
-function downloadScript() {
-  const blob = new Blob([currentScript.title + "\n\n" + currentScript.content], { type: 'text/plain' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = currentScript.title + ".txt";
-  link.click();
-}
-
-filterScripts('All');
+    </div>
+  `;
+});
 </script>
 
 </body>
