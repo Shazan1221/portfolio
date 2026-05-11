@@ -3,639 +3,180 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ahmmed Shahriar Shazan — YouTube Scriptwriter</title>
-<meta name="description" content="Ahmmed Shahriar Shazan — YouTube scriptwriter. I turn topics into interesting, high-retention video scripts." />
-
+<title>Ahmmed Shahriar Shazan &#8212; YouTube Scriptwriter</title>
+<meta name="description" content="Ahmmed Shahriar Shazan &#8212; YouTube scriptwriter specialising in documentary, crime, celebrity, science and entertainment scripts." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Warm editorial palette — cream + deep ink + terracotta accent */
-    --bg: #f4efe6;
-    --surface: #fffdf8;
-    --ink: #1f2a40;
-    --ink-soft: #475068;
-    --muted: #8b8475;
-    --line: #e8e1d3;
-    --line-strong: #d4ccbb;
+    --bg:#f2ede4;--surface:#faf8f3;--ink:#1a2133;--ink-soft:#445070;
+    --muted:#8a8070;--line:#e6dfd0;--line-strong:#d0c8b5;
+    --accent:#c0572e;--accent-soft:#f5ddd0;--accent-deep:#9e3e18;
+    --dark:#1a2133;
+    --radius-sm:10px;--radius:16px;--radius-lg:24px;
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1180px;margin:0 auto;padding:0 28px;}
+  section{padding:120px 0;}
+  section+section{border-top:1px solid var(--line);}
 
-    --accent: #c66a3e;
-    --accent-soft: #f6e1cc;
-    --accent-deep: #a8521f;
+  /* Nav */
+  .nav{position:sticky;top:16px;z-index:100;padding:0 16px;margin-bottom:-64px;}
+  .nav-inner{display:flex;align-items:center;gap:28px;padding:10px 14px 10px 18px;max-width:1040px;margin:0 auto;background:rgba(250,248,243,0.88);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border:1px solid var(--line-strong);border-radius:999px;box-shadow:0 1px 2px rgba(26,33,51,0.04),0 12px 32px -16px rgba(26,33,51,0.16);}
+  .logo{display:flex;align-items:center;gap:12px;padding:4px 6px;}
+  .logo-mark{width:32px;height:32px;border-radius:10px;background:var(--ink);color:var(--surface);display:grid;place-items:center;font-weight:700;font-size:13px;}
+  .logo-text{display:flex;flex-direction:column;line-height:1.1;}
+  .logo-name{font-weight:600;font-size:14px;color:var(--ink);}
+  .logo-role{font-size:11.5px;color:var(--muted);margin-top:2px;}
+  .nav-links{display:flex;gap:28px;list-style:none;margin-left:auto;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink-soft);transition:color 0.2s;padding:6px 4px;}
+  .nav-links a:hover{color:var(--accent);}
+  .nav-cta{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;font-size:13.5px;font-weight:500;border-radius:999px;background:var(--ink);color:var(--surface);transition:all 0.2s;white-space:nowrap;}
+  .nav-cta:hover{background:var(--accent);}
+  .menu-toggle{display:none;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink);padding:4px 8px;}
 
-    --dark: #1f2a40;
+  /* Hero */
+  .hero{padding:100px 0 120px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--ink-soft);padding:6px 14px;border:1px solid var(--line-strong);border-radius:999px;margin-bottom:28px;background:var(--surface);}
+  .status-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(192,87,46,0.18);}
+  .hero h1{font-family:var(--serif);font-size:clamp(42px,6vw,74px);font-weight:400;line-height:1.05;letter-spacing:-0.01em;margin-bottom:24px;}
+  .hero h1 em{font-style:italic;color:var(--accent);}
+  .hero .role{font-size:15px;color:var(--muted);margin-bottom:20px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;}
+  .hero .tagline{font-size:clamp(16px,1.5vw,18px);color:var(--ink-soft);max-width:540px;margin-bottom:44px;line-height:1.6;}
+  .stats{display:grid;grid-template-columns:repeat(3,auto);gap:36px;margin-bottom:40px;}
+  .stat-num{font-family:var(--serif);font-size:32px;color:var(--ink);}
+  .stat-label{font-size:12.5px;color:var(--muted);margin-top:2px;letter-spacing:0.02em;}
+  .cta-group{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;font-size:14.5px;font-weight:500;border-radius:999px;transition:all 0.2s ease;cursor:pointer;border:1px solid transparent;font-family:var(--sans);}
+  .btn-primary{background:var(--ink);color:var(--surface);border-color:var(--ink);}
+  .btn-primary:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-1px);}
+  .btn-secondary{background:var(--surface);color:var(--ink);border-color:var(--line-strong);}
+  .btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+  .btn .arrow{transition:transform 0.2s;}
+  .btn:hover .arrow{transform:translateX(3px);}
+  .hero-image-wrap{position:relative;aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;background:var(--accent-soft);box-shadow:0 1px 2px rgba(26,33,51,0.05),0 18px 50px -12px rgba(26,33,51,0.18);}
+  .hero-image-wrap img{width:100%;height:100%;object-fit:cover;}
+  .image-badge{position:absolute;bottom:18px;left:18px;right:18px;background:rgba(250,248,243,0.94);backdrop-filter:blur(14px);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;}
+  .image-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(192,87,46,0.18);flex-shrink:0;}
+  .image-badge-text{font-size:13px;color:var(--ink-soft);font-weight:500;}
 
-    --radius-sm: 10px;
-    --radius: 16px;
-    --radius-lg: 24px;
-  }
+  /* Section heads */
+  .section-label{font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:inline-flex;align-items:center;gap:10px;}
+  .section-label::before{content:"";width:24px;height:1px;background:var(--accent);}
+  .section-title{font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-0.01em;margin-bottom:56px;max-width:780px;line-height:1.1;color:var(--ink);}
+  .section-title em{font-style:italic;color:var(--accent);}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: "ss01", "cv11";
-  }
-  a { color: inherit; text-decoration: none; }
-  img { max-width: 100%; display: block; }
+  /* About */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+  .about-bio p{font-size:17px;color:var(--ink-soft);margin-bottom:18px;line-height:1.68;}
+  .skills-label{font-size:13px;color:var(--muted);margin-bottom:18px;font-weight:500;}
+  .skills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+  .skill-pill{padding:9px 16px;border:1px solid var(--line-strong);border-radius:999px;font-size:13.5px;font-weight:500;background:var(--surface);color:var(--ink-soft);transition:all 0.2s;}
+  .skill-pill:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft);}
+  .ai-note{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:20px 24px;display:flex;gap:16px;align-items:flex-start;}
+  .ai-note .ai-icon{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:var(--accent-soft);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;font-size:12px;}
+  .ai-note-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+  .ai-note p{font-size:14px;color:var(--ink-soft);line-height:1.55;margin:0;}
 
-  .container { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-  section { padding: 120px 0; }
-  section + section { border-top: 1px solid var(--line); }
+  /* Niches grid */
+  .niche-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .niche-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all 0.25s ease;position:relative;}
+  .niche-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease;}
+  .niche-card:hover::before{transform:scaleX(1);}
+  .niche-card:hover{border-color:rgba(192,87,46,0.35);box-shadow:0 12px 36px -12px rgba(26,33,51,0.12);}
+  .niche-header{padding:24px 28px 20px;}
+  .niche-tag{display:inline-flex;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-soft);padding:5px 11px;border-radius:6px;margin-bottom:16px;}
+  .niche-card h3{font-family:var(--serif);font-size:19px;font-weight:400;line-height:1.3;color:var(--ink);margin-bottom:8px;}
+  .niche-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:16px;}
+  .niche-meta{display:flex;gap:16px;font-size:12px;color:var(--muted);padding-top:14px;border-top:1px solid var(--line);}
+  .niche-meta span strong{color:var(--ink);font-weight:600;}
 
-  .accent-word {
-    color: var(--accent);
-    font-weight: inherit;
-  }
+  /* Script accordion list */
+  .script-list{border-top:1px solid var(--line);}
+  .script-item{border-bottom:1px solid var(--line);}
+  .script-trigger{width:100%;background:none;border:none;cursor:pointer;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;font-family:var(--sans);transition:background 0.15s;}
+  .script-trigger:hover{background:rgba(192,87,46,0.04);}
+  .script-trigger.open{background:rgba(192,87,46,0.06);}
+  .script-trigger-left{display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
+  .script-num{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.06em;flex-shrink:0;width:22px;}
+  .script-title{font-size:13.5px;font-weight:500;color:var(--ink);line-height:1.35;flex:1;}
+  .script-trigger:hover .script-title{color:var(--accent);}
+  .script-trigger.open .script-title{color:var(--accent);}
+  .script-chevron{flex-shrink:0;width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line-strong);display:grid;place-items:center;transition:all 0.25s;color:var(--muted);}
+  .script-trigger:hover .script-chevron{border-color:var(--accent);color:var(--accent);}
+  .script-trigger.open .script-chevron{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(180deg);}
+  .script-chevron svg{width:9px;height:9px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
-  /* ---------- Navigation ---------- */
-  .nav {
-    position: sticky;
-    top: 16px;
-    z-index: 100;
-    padding: 0 16px;
-    margin-bottom: -64px;
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    padding: 10px 14px 10px 18px;
-    max-width: 1040px;
-    margin: 0 auto;
-    background: rgba(255, 253, 248, 0.78);
-    backdrop-filter: saturate(180%) blur(16px);
-    -webkit-backdrop-filter: saturate(180%) blur(16px);
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    box-shadow:
-      0 1px 2px rgba(31,42,64,0.04),
-      0 12px 32px -16px rgba(31,42,64,0.16);
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--ink);
-    padding: 4px 6px;
-  }
-  .logo-mark {
-    width: 32px; height: 32px;
-    border-radius: 10px;
-    background: var(--ink);
-    color: var(--surface);
-    display: grid;
-    place-items: center;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-    font-family: 'Inter', sans-serif;
-  }
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.1;
-  }
-  .logo-name {
-    font-weight: 600;
-    font-size: 14px;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  .logo-role {
-    font-size: 11.5px;
-    color: var(--muted);
-    margin-top: 2px;
-    letter-spacing: 0.01em;
-  }
-  .nav-links {
-    display: flex;
-    gap: 28px;
-    list-style: none;
-    margin-left: auto;
-  }
-  .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--ink-soft);
-    transition: color 0.2s;
-    padding: 6px 4px;
-  }
-  .nav-links a:hover { color: var(--accent); }
-  .nav-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 18px;
-    font-size: 13.5px;
-    font-weight: 500;
-    border-radius: 999px;
-    background: var(--ink);
-    color: var(--surface);
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-  .nav-cta:hover {
-    background: var(--accent);
-  }
-  .nav-cta .arrow { transition: transform 0.2s; }
-  .nav-cta:hover .arrow { transform: translateX(2px); }
-  .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: var(--ink);
-    padding: 4px 8px;
-  }
+  /* Dropdown panel */
+  .script-panel{max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1);}
+  .script-panel.open{max-height:300px;}
+  .script-preview{margin:0 28px 18px;padding:16px 20px;background:var(--bg);border-radius:10px;border-left:3px solid var(--accent);}
+  .script-preview p{font-size:13.5px;color:var(--ink-soft);line-height:1.7;font-style:italic;}
+  .script-preview-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);}
+  .preview-label{font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
+  .preview-fade{font-size:11.5px;color:var(--accent);font-weight:500;}
 
-  /* ---------- Hero ---------- */
-  .hero { padding: 100px 0 120px; }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-  .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--ink-soft);
-    padding: 6px 14px;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    margin-bottom: 28px;
-    background: var(--surface);
-  }
-  .status-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(198,106,62,0.18);
-  }
+  /* Process */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .process-step{padding:32px 28px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);transition:all 0.25s;}
+  .process-step:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 16px 40px -16px rgba(26,33,51,0.14);}
+  .step-num{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:32px;letter-spacing:0.08em;display:flex;align-items:center;gap:10px;}
+  .step-num::before{content:"";width:14px;height:1px;background:var(--accent);}
+  .step-title{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:12px;color:var(--ink);}
+  .step-desc{font-size:14px;color:var(--muted);line-height:1.55;}
 
-  .hero h1 {
-    font-size: clamp(38px, 6.4vw, 78px);
-    font-weight: 700;
-    line-height: 1.02;
-    letter-spacing: -0.035em;
-    margin-bottom: 24px;
-    color: var(--ink);
-  }
+  /* Contact */
+  .contact-box{background:var(--dark);color:#fff;border-radius:var(--radius-lg);padding:88px 56px;text-align:center;position:relative;overflow:hidden;}
+  .contact-box::before{content:"";position:absolute;top:-120px;right:-120px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(192,87,46,0.18) 0%,transparent 70%);pointer-events:none;}
+  .contact-box .section-label{color:#f0a578;}
+  .contact-box .section-label::before{background:#f0a578;}
+  .contact-box h2{font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:400;letter-spacing:-0.01em;margin-bottom:18px;color:#fff;line-height:1.1;}
+  .contact-box h2 em{font-style:italic;color:#f0a578;}
+  .contact-box p{color:rgba(255,255,255,0.6);font-size:16px;max-width:500px;margin:0 auto 40px;}
+  .contact-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;}
+  .contact-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;font-size:14px;font-weight:500;border-radius:999px;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);transition:all 0.2s;}
+  .contact-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
 
-  .hero .role {
-    font-size: 16px;
-    color: var(--muted);
-    margin-bottom: 20px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
-  .hero .tagline {
-    font-size: clamp(17px, 1.6vw, 19px);
-    color: var(--ink-soft);
-    max-width: 540px;
-    margin-bottom: 44px;
-    line-height: 1.55;
-  }
+  footer{padding:40px 0 48px;color:var(--muted);font-size:13.5px;}
+  footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 36px;
-    margin-bottom: 40px;
+  @media(max-width:960px){
+    .niche-grid{grid-template-columns:1fr 1fr;}
   }
-  .stat-num {
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--ink);
+  @media(max-width:900px){
+    section{padding:80px 0;}
+    .hero{padding:80px 0;}
+    .hero-grid{grid-template-columns:1fr;gap:56px;}
+    .hero-image-wrap{aspect-ratio:4/3;max-width:480px;margin:0 auto;}
+    .nav-inner{padding:8px 8px 8px 14px;gap:12px;}
+    .logo-role{display:none;}
+    .nav-cta{display:none;}
+    .menu-toggle{margin-left:auto;display:block;}
+    .nav-links{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--surface);flex-direction:column;padding:20px 28px;gap:20px;border:1px solid var(--line-strong);border-radius:var(--radius);box-shadow:0 12px 32px -8px rgba(26,33,51,0.12);}
+    .nav-links.open{display:flex;}
+    .about-grid{grid-template-columns:1fr;gap:48px;}
+    .process-grid{grid-template-columns:1fr 1fr;}
+    .contact-box{padding:64px 28px;}
   }
-  .stat-label {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-
-  .cta-group {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 14px 26px;
-    font-size: 14.5px;
-    font-weight: 500;
-    border-radius: 999px;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    border: 1px solid transparent;
-    font-family: inherit;
-  }
-  .btn-primary {
-    background: var(--ink);
-    color: var(--surface);
-    border-color: var(--ink);
-  }
-  .btn-primary:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: translateY(-1px);
-  }
-  .btn-secondary {
-    background: var(--surface);
-    color: var(--ink);
-    border-color: var(--line-strong);
-  }
-  .btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-1px);
-  }
-  .btn .arrow { transition: transform 0.2s; }
-  .btn:hover .arrow { transform: translateX(3px); }
-
-  /* ---------- Hero image ---------- */
-  .hero-image-wrap {
-    position: relative;
-    aspect-ratio: 4/5;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background: var(--accent-soft);
-    box-shadow:
-      0 1px 2px rgba(31,42,64,0.05),
-      0 18px 50px -12px rgba(31,42,64,0.18);
-  }
-  .hero-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .image-badge {
-    position: absolute;
-    bottom: 18px;
-    left: 18px;
-    right: 18px;
-    background: rgba(255,253,248,0.94);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-radius: 14px;
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--ink);
-  }
-  .image-badge-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(198,106,62,0.18);
-    flex-shrink: 0;
-  }
-  .image-badge-text {
-    font-size: 13px;
-    color: var(--ink-soft);
-    font-weight: 500;
-    letter-spacing: 0.01em;
-  }
-
-  /* ---------- Section heads ---------- */
-  .section-label {
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 18px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-label::before {
-    content: "";
-    width: 24px; height: 1px;
-    background: var(--accent);
-  }
-  .section-title {
-    font-size: clamp(32px, 4.2vw, 48px);
-    font-weight: 600;
-    letter-spacing: -0.028em;
-    margin-bottom: 56px;
-    max-width: 780px;
-    line-height: 1.1;
-    color: var(--ink);
-  }
-
-  /* ---------- About ---------- */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-  .about-bio p {
-    font-size: 17px;
-    color: var(--ink-soft);
-    margin-bottom: 18px;
-    line-height: 1.65;
-  }
-  .skills-label {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 18px;
-    font-weight: 500;
-  }
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 36px;
-  }
-  .skill-pill {
-    padding: 9px 16px;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    font-size: 13.5px;
-    font-weight: 500;
-    background: var(--surface);
-    color: var(--ink-soft);
-    transition: all 0.2s;
-  }
-  .skill-pill:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-soft);
-  }
-
-  /* AI policy callout */
-  .ai-note {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--accent);
-    border-radius: var(--radius-sm);
-    padding: 20px 24px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .ai-note .ai-icon {
-    flex-shrink: 0;
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    background: var(--accent-soft);
-    color: var(--accent-deep);
-    display: grid;
-    place-items: center;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.02em;
-  }
-  .ai-note-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
-    margin-bottom: 4px;
-  }
-  .ai-note p {
-    font-size: 14px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-    margin: 0;
-  }
-
-  /* ---------- Work ---------- */
-  .work-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .work-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 28px;
-    transition: all 0.25s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  .work-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px -16px rgba(31,42,64,0.14);
-  }
-  .work-tag {
-    display: inline-block;
-    font-size: 11.5px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent-deep);
-    background: var(--accent-soft);
-    padding: 5px 11px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    align-self: flex-start;
-  }
-  .work-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.35;
-    margin-bottom: 12px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-  .work-card p {
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 24px;
-    flex-grow: 1;
-    line-height: 1.55;
-  }
-  .work-meta {
-    display: flex;
-    gap: 24px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .work-meta span strong { color: var(--ink); font-weight: 600; }
-
-  /* ---------- Process ---------- */
-  .process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .process-step {
-    padding: 32px 28px;
-    background: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    transition: all 0.25s;
-    position: relative;
-  }
-  .process-step:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 16px 40px -16px rgba(31,42,64,0.14);
-  }
-  .step-num {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 32px;
-    letter-spacing: 0.06em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .step-num::before {
-    content: "";
-    width: 14px; height: 1px;
-    background: var(--accent);
-  }
-  .step-title {
-    font-size: 21px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-  .step-desc {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.55;
-  }
-
-  /* ---------- Contact ---------- */
-  .contact-box {
-    background: var(--dark);
-    color: #fff;
-    border-radius: var(--radius-lg);
-    padding: 88px 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .contact-box .section-label { color: var(--accent); }
-  .contact-box .section-label::before { background: var(--accent); }
-  .contact-box h2 {
-    font-size: clamp(32px, 4.2vw, 48px);
-    font-weight: 600;
-    letter-spacing: -0.028em;
-    margin-bottom: 18px;
-    color: #fff;
-    line-height: 1.1;
-  }
-  .contact-box h2 .accent-word { color: #f0a578; }
-  .contact-box p {
-    color: rgba(255,255,255,0.65);
-    font-size: 16.5px;
-    max-width: 520px;
-    margin: 0 auto 40px;
-  }
-  .contact-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  .contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 13px 22px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.08);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.15);
-    transition: all 0.2s;
-  }
-  .contact-btn:hover {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-  }
-
-  /* ---------- Footer ---------- */
-  footer {
-    padding: 40px 0 48px;
-    color: var(--muted);
-    font-size: 13.5px;
-  }
-  footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* ---------- Mobile ---------- */
-  @media (max-width: 900px) {
-    section { padding: 80px 0; }
-    .hero { padding: 80px 0 80px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 56px; }
-    .hero-image-wrap { aspect-ratio: 4/3; max-width: 480px; margin: 0 auto; }
-
-    .nav-inner { padding: 8px 8px 8px 14px; gap: 12px; }
-    .logo-role { display: none; }
-    .nav-cta { display: none; }
-    .menu-toggle { margin-left: auto; }
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      right: 0;
-      background: var(--surface);
-      flex-direction: column;
-      padding: 20px 28px;
-      gap: 20px;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 32px -8px rgba(31,42,64,0.12);
-    }
-    .nav-links.open { display: flex; }
-    .menu-toggle { display: block; }
-
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .work-grid { grid-template-columns: 1fr; }
-    .process-grid { grid-template-columns: 1fr 1fr; }
-    .stats { grid-template-columns: repeat(3, auto); gap: 28px; }
-    .contact-box { padding: 64px 28px; border-radius: var(--radius); }
-  }
-
-  @media (max-width: 520px) {
-    .process-grid { grid-template-columns: 1fr; }
-    .stats { gap: 22px; }
-    .stat-num { font-size: 24px; }
-    .cta-group .btn { flex: 1 1 auto; }
-    .container { padding: 0 20px; }
+  @media(max-width:620px){
+    .niche-grid{grid-template-columns:1fr;}
+    .process-grid{grid-template-columns:1fr;}
+    .stats{gap:22px;}
+    .cta-group .btn{flex:1 1 auto;}
+    .container{padding:0 20px;}
   }
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="#top" class="logo">
@@ -647,67 +188,51 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
+      <li><a href="#work">Niches</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Hire me <span class="arrow">→</span></a>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <a href="#contact" class="nav-cta">Hire me &#8594;</a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
   </div>
 </nav>
 
-<!-- Hero -->
 <header class="hero" id="top">
   <div class="container">
     <div class="hero-grid">
       <div>
         <span class="eyebrow"><span class="status-dot"></span> Available for new projects</span>
-        <h1>Ahmmed Shahriar <span class="accent-word">Shazan</span></h1>
+        <h1>Ahmmed Shahriar<br><em>Shazan</em></h1>
         <div class="role">YouTube &amp; Video Scriptwriter</div>
-        <p class="tagline">I turn topics into interesting, high-retention video scripts — research-backed, hook-driven, and built to keep viewers watching to the end.</p>
-
+        <p class="tagline">I turn topics into compelling, high-retention documentary and entertainment scripts &#8212; research-backed, hook-driven, and built to keep viewers watching to the end.</p>
         <div class="stats">
-          <div>
-            <div class="stat-num">500+</div>
-            <div class="stat-label">Scripts delivered</div>
-          </div>
-          <div>
-            <div class="stat-num">24h</div>
-            <div class="stat-label">Turnaround</div>
-          </div>
-          <div>
-            <div class="stat-num">5★</div>
-            <div class="stat-label">Average rating</div>
-          </div>
+          <div><div class="stat-num">500+</div><div class="stat-label">Scripts delivered</div></div>
+          <div><div class="stat-num">24h</div><div class="stat-label">Turnaround</div></div>
+          <div><div class="stat-num">5&#9733;</div><div class="stat-label">Average rating</div></div>
         </div>
-
         <div class="cta-group">
-          <a href="#work" class="btn btn-primary">See my work <span class="arrow">→</span></a>
+          <a href="#work" class="btn btn-primary">See my niches <span class="arrow">&#8594;</span></a>
           <a href="#contact" class="btn btn-secondary">Hire me</a>
         </div>
       </div>
-
       <div class="hero-image-wrap">
-        <!-- REPLACE the src below with the path to your own photo (e.g. "me.jpg") -->
-        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80" alt="Ahmmed Shahriar Shazan — YouTube scriptwriter at work" />
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80" alt="Ahmmed Shahriar Shazan at work" />
         <div class="image-badge">
           <span class="image-badge-dot"></span>
-          <span class="image-badge-text">Currently writing for 8 channels</span>
+          <span class="image-badge-text">Currently writing for 8+ channels</span>
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- About -->
 <section id="about">
   <div class="container">
     <div class="section-label">About</div>
-    <h2 class="section-title">Writing scripts is half craft, <span class="accent-word">half psychology</span> — I obsess over both.</h2>
-
+    <h2 class="section-title">Writing scripts is half craft,<br><em>half psychology</em> &#8212; I obsess over both.</h2>
     <div class="about-grid">
       <div class="about-bio">
-        <p>I've spent the last several years writing video scripts for YouTube channels across finance, tech, self-improvement, and education — the kind of scripts that get clicked, watched to the end, and shared.</p>
+        <p>I&#8217;ve spent years writing video scripts for YouTube channels across crime, celebrity drama, documentary, science, and entertainment &#8212; the kind of scripts that get clicked, watched to the end, and shared.</p>
         <p>Every script is research-backed, original, and built around one goal: keeping the viewer hooked from the first second to the call-to-action. No filler. No fluff. Just clean writing that earns retention.</p>
       </div>
       <div>
@@ -717,15 +242,18 @@
           <span class="skill-pill">Retention scripting</span>
           <span class="skill-pill">Topic research</span>
           <span class="skill-pill">Story structure</span>
-          <span class="skill-pill">SEO-friendly titles</span>
+          <span class="skill-pill">Documentary narration</span>
+          <span class="skill-pill">Sarcastic commentary</span>
+          <span class="skill-pill">Crime storytelling</span>
+          <span class="skill-pill">Celebrity drama</span>
+          <span class="skill-pill">Top 10 / Ranking formats</span>
           <span class="skill-pill">Voiceover tone</span>
         </div>
-
         <div class="ai-note">
           <div class="ai-icon">AI</div>
           <div>
             <div class="ai-note-title">AI use is your call.</div>
-            <p>I work both ways. If you're okay with AI-assisted drafts polished by hand, we go that route. If you want fully human-written scripts, that's what you get. Just tell me your preference in the brief.</p>
+            <p>I work both ways. AI-assisted drafts polished by hand, or fully human-written scripts. Just tell me your preference in the brief.</p>
           </div>
         </div>
       </div>
@@ -733,82 +261,516 @@
   </div>
 </section>
 
-<!-- Work -->
 <section id="work">
   <div class="container">
-    <div class="section-label">Work</div>
-    <h2 class="section-title">Selected <span class="accent-word">scripts</span>.</h2>
+    <div class="section-label">Niches</div>
+    <h2 class="section-title">Script categories I <em>specialise</em> in.<br><small style="font-family:var(--sans);font-size:16px;font-weight:400;color:var(--muted);letter-spacing:0;display:block;margin-top:12px;">Click any title to read a sample opening.</small></h2>
 
-    <div class="work-grid">
-      <div class="work-card">
-        <span class="work-tag">Finance</span>
-        <h3>Why 90% of People Never Build Wealth</h3>
-        <p>A hook-driven explainer breaking down the psychology of money habits that quietly keep people broke — written for a personal-finance channel.</p>
-        <div class="work-meta">
-          <span><strong>2,400</strong> words</span>
-          <span><strong>12 min</strong> video</span>
+    <div class="niche-grid">
+
+      <!-- TOP 10 / RANKING -->
+      <div class="niche-card">
+        <div class="niche-header">
+          <div class="niche-tag">Top 10 &#183; Documentary</div>
+          <h3>Top 10 / Ranking Documentary</h3>
+          <p class="niche-desc">List-format docs built for curiosity clicks and strong watch time through every entry.</p>
+          <div class="niche-meta">
+            <span><strong>1,500&#8211;2,800</strong> words</span>
+            <span><strong>8&#8211;14 min</strong> video</span>
+          </div>
+        </div>
+        <div class="script-list">
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">01</span>
+                <span class="script-title">Top 11 Most Uncomfortable Celebrity Romances</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Look, Hollywood has always been a weird place. But some celebrity couples? They didn&#8217;t just raise eyebrows &#8212; they made the whole room go silent. We&#8217;re talking about relationships that felt off the second they were announced. The age gaps, the power imbalances, the timing that made you go &#8220;wait&#8230; really?&#8221; Today we&#8217;re counting down eleven celebrity romances that made fans genuinely uncomfortable &#8212; and honestly, still do.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 90 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">02</span>
+                <span class="script-title">10 Virgin Mary Statues Caught MOVING on Camera</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>You&#8217;re standing inside a small chapel. It&#8217;s quiet. Then someone points at the statue in the corner and says &#8212; &#8220;it moved.&#8221; You laugh it off. But then you see the video. And suddenly it&#8217;s not so funny anymore. Over the years, dozens of people around the world have caught footage of Virgin Mary statues doing things statues are absolutely not supposed to do &#8212; blinking, crying, turning their heads. Today we&#8217;re looking at ten of the most documented cases.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 92 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">03</span>
+                <span class="script-title">Top 10 Songs from the 60s &amp; 70s You Forgot Were Awesome</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Okay, everyone knows the big ones. Everyone knows &#8220;Hotel California&#8221; and &#8220;Bohemian Rhapsody.&#8221; But here&#8217;s the thing &#8212; the 60s and 70s were absolutely loaded with songs that never got their fair share of the spotlight. Songs that were genuinely great. Songs that hit the radio, made people stop what they were doing, and then somehow just&#8230; got buried. So today we&#8217;re digging them back up. These are ten tracks from those two decades that deserve a whole lot more love than they ever got.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 88 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">04</span>
+                <span class="script-title">20 Terrifying Things Found In Abandoned Places</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>There&#8217;s something about an abandoned building that just pulls people in. Maybe it&#8217;s the silence. Maybe it&#8217;s the idea that whatever happened there, people left in a hurry and never came back. And sometimes when urban explorers push through those doors &#8212; they find things that genuinely make them wish they hadn&#8217;t. We&#8217;re not talking about old furniture or broken windows. We&#8217;re talking about discoveries that had people calling the police, calling their therapist, or just flat-out running. Here are twenty of the most disturbing things ever found in abandoned places.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 95 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Tech</span>
-        <h3>The Truth About AI Replacing Jobs</h3>
-        <p>A balanced, research-backed deep-dive that opens with a viral hook and ends with a strong personal takeaway. Optimized for retention.</p>
-        <div class="work-meta">
-          <span><strong>3,100</strong> words</span>
-          <span><strong>16 min</strong> video</span>
+      <!-- CELEBRITY DOCUMENTARY -->
+      <div class="niche-card">
+        <div class="niche-header">
+          <div class="niche-tag">Celebrity &#183; Documentary</div>
+          <h3>Old &amp; Current Celebrity Documentary</h3>
+          <p class="niche-desc">Deep-dive expos&#233;s on Hollywood icons &#8212; old and new &#8212; built for nostalgia channels and celebrity drama audiences.</p>
+          <div class="niche-meta">
+            <span><strong>2,000&#8211;3,200</strong> words</span>
+            <span><strong>10&#8211;16 min</strong> video</span>
+          </div>
+        </div>
+        <div class="script-list">
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">01</span>
+                <span class="script-title">Elvis Presley Breaks Silence Before His Death and Reveals Terrifying Secret</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>In the final months of his life, Elvis Presley was not the man the world thought they knew. The concerts had gotten harder. The pills had gotten worse. And the people closest to him say he was saying things &#8212; strange things &#8212; that nobody really understood at the time. But looking back now, some of those closest to him believe he was trying to tell them something. Something he&#8217;d been carrying for years. Something he&#8217;d never been able to say out loud. Until it was almost too late.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 91 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">02</span>
+                <span class="script-title">The Tragedy Of Michael J. Fox Is Beyond Heartbreaking</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>In 1991, Michael J. Fox was at the top of the world. He was one of the most recognized faces on the planet, his movies were everywhere, and he was only 29 years old. Then one morning he woke up and noticed something wrong with his left hand. A little tremor. He figured he&#8217;d slept on it funny. He ignored it. But it didn&#8217;t go away. And what came next would change the rest of his life in ways that no one &#8212; not even his doctors &#8212; could have predicted.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 93 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">03</span>
+                <span class="script-title">What Happened to Lynda Carter, the Original Wonder Woman</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>For a lot of people, Lynda Carter is Wonder Woman. Not Gal Gadot &#8212; no offense &#8212; but Lynda Carter. The woman who put on that costume in 1975 and made millions of kids believe a superhero could actually exist. She was magnetic. She was powerful. And then the show ended, and she kind of just&#8230; disappeared from the spotlight. So what actually happened? Where did she go, and what has her life looked like since the cameras stopped rolling? The answer is a lot more complicated &#8212; and a lot more interesting &#8212; than most people realize.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 98 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">04</span>
+                <span class="script-title">Andre The Giant&#8217;s Daughter Is Even Bigger Than Him!</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Andre the Giant was seven foot four, weighed over 500 pounds, and was so big that regular chairs broke under him. He was literally one of a kind &#8212; and most people assumed that when he passed away in 1993, that was it. But what most people didn&#8217;t know is that Andre had a daughter. And she didn&#8217;t just inherit his last name &#8212; she inherited something else too. Something that&#8217;s now turning heads all over again, decades after her father first walked into a wrestling ring and changed everything.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 90 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Self-Improvement</span>
-        <h3>How I Read 52 Books in a Year (and Remembered Them)</h3>
-        <p>First-person storytelling structured around three turning points, with a concrete framework viewers can act on by the end.</p>
-        <div class="work-meta">
-          <span><strong>1,800</strong> words</span>
-          <span><strong>9 min</strong> video</span>
+      <!-- CRIME DOCUMENTARY -->
+      <div class="niche-card">
+        <div class="niche-header">
+          <div class="niche-tag">Crime &#183; Documentary</div>
+          <h3>Crime Documentary</h3>
+          <p class="niche-desc">Gripping crime-format scripts built around real events, police confrontations, and true-crime storytelling.</p>
+          <div class="niche-meta">
+            <span><strong>1,800&#8211;2,600</strong> words</span>
+            <span><strong>9&#8211;13 min</strong> video</span>
+          </div>
+        </div>
+        <div class="script-list">
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">01</span>
+                <span class="script-title">When Drug Traffickers Mess With The Wrong Police Officers</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Most drug traffickers have a pretty good system. Keep your head down, don&#8217;t draw attention, and never &#8212; ever &#8212; underestimate who you&#8217;re dealing with. But sometimes, they get cocky. Sometimes they think they&#8217;ve read the room, figured out who&#8217;s watching, and decided the coast is clear. And sometimes they are dead wrong. What you&#8217;re about to see are real moments where drug traffickers made the mistake of pushing too hard, going too far, and going up against officers who were more than ready for them.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 87 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">02</span>
+                <span class="script-title">When Corrupt Cops Regret Messing With The Wrong People</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Wearing a badge doesn&#8217;t make you untouchable. It never did. And every once in a while, a cop who thought the rules didn&#8217;t apply to them runs into someone &#8212; or something &#8212; that proves them very wrong. Whether it&#8217;s a citizen who knows their rights better than the officer does, a dashcam that catches everything, or an entire department that&#8217;s had enough &#8212; these are the moments where corrupt officers found out the hard way that power doesn&#8217;t last forever. And accountability? It always catches up eventually.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 89 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">03</span>
+                <span class="script-title">When Criminals Try To Grab Officers&#8217; Guns</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>There are a lot of bad decisions a person can make during a police encounter. But grabbing for an officer&#8217;s gun? That&#8217;s at the very top of the list. It happens more than most people think &#8212; and it almost never ends the way the person doing the grabbing imagined it would. Officers train specifically for this. They know what it feels like, they know how to respond, and they are trained to react in a split second. Today we&#8217;re looking at some of the most intense moments captured on camera.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 91 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">04</span>
+                <span class="script-title">From a Nerd to Sonny Barger&#8217;s Most FEARED Enforcer</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Nobody who knew him growing up would have ever guessed where he&#8217;d end up. He was a quiet kid. Kept to himself. Not the type who got into fights, not the type who ran with any kind of crowd. But somewhere along the way, something shifted. And by the time he was riding with the Hells Angels under Sonny Barger himself, the people who grew up with him wouldn&#8217;t have recognized the person he&#8217;d become. This is the story of how an unlikely kid became one of the most feared names in the club.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 94 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Education</span>
-        <h3>The Science of Why You Can't Focus Anymore</h3>
-        <p>A documentary-style script blending neuroscience research with relatable examples and a clear, actionable conclusion.</p>
-        <div class="work-meta">
-          <span><strong>2,700</strong> words</span>
-          <span><strong>14 min</strong> video</span>
+      <!-- SCIENCE & MYSTERY -->
+      <div class="niche-card">
+        <div class="niche-header">
+          <div class="niche-tag">Science &#183; Mystery</div>
+          <h3>Science &amp; Mystery Documentary</h3>
+          <p class="niche-desc">Mind-bending topics turned into fascinating narratives &#8212; with hooks built to compete hard in the algorithm.</p>
+          <div class="niche-meta">
+            <span><strong>2,200&#8211;3,500</strong> words</span>
+            <span><strong>11&#8211;18 min</strong> video</span>
+          </div>
+        </div>
+        <div class="script-list">
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">01</span>
+                <span class="script-title">Terrance Howard JUST Revealed a 6000-Year-Old Secret (SHOCKING)</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>What if everything you learned in school about how the universe works&#8230; is wrong? That&#8217;s not a crazy person talking. That&#8217;s Terrance Howard &#8212; actor, Emmy nominee, and apparently a man who has spent the last several decades digging into a theory so old and so buried that most modern scientists won&#8217;t even touch it. He calls it Terryology. And while a lot of people laughed when he first started talking about it, the things he&#8217;s been saying lately are making some people look twice. Here&#8217;s what he actually claims to have found.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 96 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">02</span>
+                <span class="script-title">Kanye West Just Exposed the Entire System</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>For years people wrote Kanye off as someone who&#8217;d lost the plot. Too loud, too erratic, too much. But here&#8217;s the thing &#8212; buried inside all the noise, he&#8217;s been saying some very specific things. About the music industry. About who owns what. About contracts that basically sign your name away and call it a deal. And a lot of what he said back then? Other artists are now coming out and saying the exact same thing. So the question isn&#8217;t whether he was wrong. The question is why it took everyone else so long to catch up.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 97 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">03</span>
+                <span class="script-title">Joe Rogan CONFIRMS Terrence Howard&#8217;s Theories: &#8220;He Is A Genius&#8221;</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Joe Rogan has sat across from scientists, astronauts, fighters, and philosophers. The man is not easy to impress. So when Terrence Howard sat down on the podcast and started laying out his theories &#8212; the ones about frequency, about hydrogen, about a fundamentally different way of looking at how matter behaves &#8212; most people expected Rogan to push back hard. Instead, he leaned in. He got quiet. And at the end of it, he looked at Howard and said something that the internet has not stopped talking about since.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 88 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Business</span>
-        <h3>How Small Brands Beat Billion-Dollar Companies</h3>
-        <p>A case-study-driven script with three real brand stories woven into a single narrative arc — built for a startup-focused audience.</p>
-        <div class="work-meta">
-          <span><strong>2,200</strong> words</span>
-          <span><strong>11 min</strong> video</span>
+      <!-- SARCASTIC COMMENTARY -->
+      <div class="niche-card">
+        <div class="niche-header">
+          <div class="niche-tag">Sarcastic &#183; Commentary</div>
+          <h3>Documentary + Sarcastic Commentary</h3>
+          <p class="niche-desc">Facts plus personality &#8212; the hybrid format that works best for channels with a strong host voice.</p>
+          <div class="niche-meta">
+            <span><strong>1,400&#8211;2,400</strong> words</span>
+            <span><strong>7&#8211;12 min</strong> video</span>
+          </div>
+        </div>
+        <div class="script-list">
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">01</span>
+                <span class="script-title">Recreating all 45 US Presidents</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Forty-five presidents. Some of them genuinely changed the country. Some of them&#8230; tried their best. And some of them were so spectacularly bad at the job that history books have basically agreed to just move on and not dwell on it. We decided to recreate all of them &#8212; from George Washington all the way through &#8212; and honestly, some of the results were deeply unsettling. A few came out looking exactly right. A few looked like someone put the wrong face on a totally different person. And one of them we&#8217;re still not fully over.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 94 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">02</span>
+                <span class="script-title">Soviet Union Leaders &#8212; Ranked</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Running the Soviet Union was not a job for the faint-hearted. You had to be ruthless, paranoid, politically brilliant, or at minimum willing to pretend you were all three at the same time. Some of the men who ran that country were genuinely terrifying. Some of them were more interesting than their reputation suggests. And at least one of them was basically just trying to hold the whole thing together with tape while it fell apart around him. Today we&#8217;re ranking all of them &#8212; from the absolute worst to the one who at least tried.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 92 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="work-card">
-        <span class="work-tag">Lifestyle</span>
-        <h3>I Tried the 5 AM Routine for 30 Days</h3>
-        <p>A personal-experiment vlog script with strong day-by-day micro-hooks to keep watch time high through the full runtime.</p>
-        <div class="work-meta">
-          <span><strong>1,500</strong> words</span>
-          <span><strong>8 min</strong> video</span>
+      <!-- CELEBRITY DRAMA NEWS -->
+      <div class="niche-card">
+        <div class="niche-header">
+          <div class="niche-tag">Celebrity &#183; Drama News</div>
+          <h3>Celebrity Drama News</h3>
+          <p class="niche-desc">Fast-moving, high-intrigue scripts covering celebrity controversies and hidden Hollywood history.</p>
+          <div class="niche-meta">
+            <span><strong>1,200&#8211;2,000</strong> words</span>
+            <span><strong>6&#8211;10 min</strong> video</span>
+          </div>
+        </div>
+        <div class="script-list">
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">01</span>
+                <span class="script-title">TOP 5 Closet Cases of Hollywood&#8217;s Golden Age</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Hollywood in the 1930s, 40s, and 50s was glamorous on the surface and deeply complicated underneath. The studios controlled everything &#8212; your image, your relationships, sometimes even who you were allowed to be seen with in public. And for certain stars, that control went much further. There were entire identities being carefully managed, hidden, and quietly erased. Today we&#8217;re talking about five of the most well-documented cases from that era &#8212; people whose real lives were almost nothing like the version Hollywood sold to the world.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 86 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">02</span>
+                <span class="script-title">Top 20 Filthy Secrets of Wild West Saloon Girls</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>When most people picture the Wild West, they picture cowboys, gunfights, and wide open land. But there was another world running quietly alongside all of that &#8212; and it was centered around the saloon. The women who worked those saloons have been painted as background characters for decades. But the real history is way more interesting than that. These were women who navigated one of the most dangerous environments in American history, and did it on their own terms. Here are twenty things history books left out.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 88 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">03</span>
+                <span class="script-title">The Real Reason GARY BURGHOFF QUIT M*A*S*H</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>Radar O&#8217;Reilly was the heart of M*A*S*H. Everybody knew it. The writers knew it, the cast knew it, and the audience definitely knew it. So when Gary Burghoff announced he was leaving the show in 1979 &#8212; while it was still one of the most watched shows on television &#8212; people were genuinely confused. The official explanation at the time was pretty vague. He wanted to spend more time with his family. But people who were there tell a very different story. And it starts long before he ever made the decision to walk away.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 94 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="script-item">
+            <button class="script-trigger" onclick="toggleScript(this)">
+              <span class="script-trigger-left">
+                <span class="script-num">04</span>
+                <span class="script-title">What REALLY Happened To DANNY KOKER From Counting Cars?</span>
+              </span>
+              <span class="script-chevron"><svg viewBox="0 0 12 12"><polyline points="2,4 6,8 10,4"/></svg></span>
+            </button>
+            <div class="script-panel">
+              <div class="script-preview">
+                <p>If you watched Counting Cars, you know Danny Koker wasn&#8217;t just the guy running the shop. He was the show. Big personality, strong opinions, and a genuine passion for cars that came through every single episode. So when things started to get quiet around him, people noticed. The show changed. Danny stepped back. And for a while, nobody was really saying what was going on. But over time, the pieces started coming together. And what actually happened to Danny Koker is a story that&#8217;s equal parts frustrating, real, and honestly kind of sad.</p>
+                <div class="script-preview-footer">
+                  <span class="preview-label">Script opening &#8212; first 93 words</span>
+                  <span class="preview-fade">&#8230; continues</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+
+    </div><!-- /niche-grid -->
   </div>
 </section>
 
-<!-- Process -->
 <section id="process">
   <div class="container">
     <div class="section-label">Process</div>
-    <h2 class="section-title">How a script <span class="accent-word">gets made</span>.</h2>
-
+    <h2 class="section-title">How a script <em>gets made</em>.</h2>
     <div class="process-grid">
       <div class="process-step">
         <div class="step-num">Step 01</div>
@@ -818,7 +780,7 @@
       <div class="process-step">
         <div class="step-num">Step 02</div>
         <div class="step-title">Research</div>
-        <p class="step-desc">Deep topic research — credible sources, fresh angles, and the specific data points that make the script unforgettable.</p>
+        <p class="step-desc">Deep topic research &#8212; credible sources, fresh angles, and the specific data points that make the script unforgettable.</p>
       </div>
       <div class="process-step">
         <div class="step-num">Step 03</div>
@@ -834,15 +796,14 @@
   </div>
 </section>
 
-<!-- Contact -->
 <section id="contact">
   <div class="container">
     <div class="contact-box">
       <div class="section-label">Contact</div>
-      <h2>Got a topic? <span class="accent-word">Let's turn it into a script.</span></h2>
+      <h2>Got a topic? <em>Let&#8217;s turn it into a script.</em></h2>
       <p>Available for one-off scripts, ongoing channel partnerships, and ghostwriting. Reply time under 24 hours.</p>
       <div class="contact-buttons">
-        <a href="mailto:ahmmedshahriarshazan@gmail.com" class="contact-btn">Email</a>
+        <a href="mailto:ahmmedshahriarshazan@gmail.com" class="contact-btn">&#9993; Email</a>
         <a href="https://wa.me/" class="contact-btn" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://linkedin.com/" class="contact-btn" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://fiverr.com/" class="contact-btn" target="_blank" rel="noopener">Fiverr</a>
@@ -851,13 +812,35 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <div class="container">
-    <span>© 2026 Ahmmed Shahriar Shazan</span>
+    <span>&#169; 2026 Ahmmed Shahriar Shazan</span>
     <span>Built with care for words.</span>
   </div>
 </footer>
 
+<script>
+function toggleScript(btn) {
+  const panel = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+
+  // Close all other open panels in the same card
+  const card = btn.closest('.niche-card');
+  card.querySelectorAll('.script-trigger.open').forEach(function(openBtn) {
+    if (openBtn !== btn) {
+      openBtn.classList.remove('open');
+      openBtn.nextElementSibling.classList.remove('open');
+    }
+  });
+
+  if (isOpen) {
+    btn.classList.remove('open');
+    panel.classList.remove('open');
+  } else {
+    btn.classList.add('open');
+    panel.classList.add('open');
+  }
+}
+</script>
 </body>
 </html>
